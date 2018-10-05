@@ -36,7 +36,7 @@ def handle_message(event):
     profile = line_bot_api.get_profile('<userId>')
     message = TextSendMessage(text='Nice to meet you!')
     line_bot_api.reply_message(event.reply_token, message)
-	line_bot_api.reply_message(event.reply_token, profile.user_id)
+    line_bot_api.reply_message(event.reply_token, profile.user_id)
 
 import os
 if __name__ == "__main__":
