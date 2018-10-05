@@ -33,7 +33,7 @@ def callback():
 # 處理訊息
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
-    profile = line_bot_api.get_profile(user_id)
+    profile = line_bot_api.get_profile('<user_id>')
     message = TextSendMessage(text='Nice to meet you!'+profile)
     line_bot_api.reply_message(event.reply_token, message)
 
