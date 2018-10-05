@@ -38,7 +38,7 @@ def callback():
 def handle_message(event):
     line_bot_api.reply_message(
         event.reply_token,
-        TextSendMessage(text='Nice to meet you, ')
+        TextSendMessage(text='Nice to meet you, '))
 
 
 if __name__ == "__main__":
