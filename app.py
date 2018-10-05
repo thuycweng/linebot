@@ -38,10 +38,8 @@ def callback():
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
     line_bot_api.reply_message(
-		profile = line_bot_api.get_progile(user_id)
         event.reply_token,
-		texttoreply=('Nice to meet you, ')
-        TextSendMessage(text=texttoreply))
+        TextSendMessage(text='Nice to meet you, ')
 
 
 if __name__ == "__main__":
