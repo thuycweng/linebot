@@ -19,6 +19,12 @@ line_bot_api = LineBotApi('ACCESS_TOKEN')
 # Channel Secret
 handler = WebhookHandler('SECRET')
 
+
+@app.route("/")
+def hello_world():
+    return "hello world!"
+
+
 # 監聽所有來自 /callback 的 Post Request
 @app.route("/callback", methods=['POST'])
 def callback():
