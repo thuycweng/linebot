@@ -15,9 +15,9 @@ ACCESS_TOKEN= os.environ['ACCESS_TOKEN']
 SECRET= os.environ['CHANNEL_SECRET']
 
 # Channel Access Token
-line_bot_api = LineBotApi('ACCESS_TOKEN')
+line_bot_api = LineBotApi(ACCESS_TOKEN)
 # Channel Secret
-handler = WebhookHandler('SECRET')
+handler = WebhookHandler(SECRET)
 
 
 @app.route("/")
