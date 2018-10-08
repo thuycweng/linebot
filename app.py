@@ -1,5 +1,6 @@
 from flask import Flask, request, abort
 import os
+import sys
 from linebot import (
     LineBotApi, WebhookHandler
 )
@@ -10,8 +11,8 @@ from linebot.models import *
 
 app = Flask(__name__)
 
-ACCESS_TOKEN= os.environ.get('ACCESS_TOKEN')
-SECRET= os.environ.get('CHANNEL_SECRET')
+ACCESS_TOKEN= os.environ['ACCESS_TOKEN']
+SECRET= os.environ['CHANNEL_SECRET']
 
 # Channel Access Token
 line_bot_api = LineBotApi('ACCESS_TOKEN')
