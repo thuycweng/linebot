@@ -65,10 +65,13 @@ def handle_message(event):
     if '課程' in _token[0] or '課表' in _token[0]:
         cls_list = getCls(_token[1])
         for cls in cls_list:
-            _message = TextSendMessage(text=cls) #reply course
-#             line_bot_api.push_message(event.source.user_id, TextSendMessage(text=_message))
+            _message = TextSendMessage(text=cls)	#reply course
             line_bot_api.reply_message(event.reply_token, _message)
-
+#            line_bot_api.push_message(event.source.user_id, TextSendMessage(text='123'))
+    elif '誠品' in _token[0] or '書單' in _token[0]:
+        bookls = find_bookls(_token[1])
+        _message = TextSendMessage(text=bookls)	#reply course
+        line_bot_api.reply_message(event.reply_token, _message)
     elif '空氣' in _token[0] or 'pm2' in _low_token:
         # query PM2.5
         for _site in pm_site:
@@ -76,6 +79,24 @@ def handle_message(event):
                 _message = TextSendMessage(text=pm_site[_site]) #reply pm2.5 for the site
                 line_bot_api.reply_message(event.reply_token, _message)
                 break;
+    elif '!h' in _token[0] or '!help' in _token[0]:
+        _message = TextSendMessage(text="請輸入:課程, 誠品, 空氣 + <關鍵字>")
+        line_bot_api.reply_message(event.reply_token, _message)
+	
+def find_bookls(kw):
+    with open("ESLITE.json",'r') as load_f:
+        load_dict = json.load(load_f)
+    x = load_dict['items']
+    ans = ()
+    for i in x:
+        #if i['title'] == "title":
+        if i['title'].find(str(kw))== -1:
+            pass
+#             print("")
+        else:
+            ans= (i['title']+i['link'])
+#             print (i['title'], i['link'])
+    return ans
 
 def loadPMJson():
     with urllib.request.urlopen("http://opendata2.epa.gov.tw/AQX.json") as url:
