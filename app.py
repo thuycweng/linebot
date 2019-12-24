@@ -16,8 +16,8 @@ from linebot.models import *
 
 app = Flask(__name__)
 
-ACCESS_TOKEN= os.environ['ACCESS_TOKEN']
-SECRET= os.environ['CHANNEL_SECRET']
+ACCESS_TOKEN= os.environ['7ejLZgAqLIJuafl/SF62AWu7H4sGWNCwaP84IxcMSRv3Pq2Og2R88ou97BCVARrW6liqV9tOgOa/q0fyVl0ep/QoYb4esyzLd+7KW1HXAroEWp+kvSwje3ox3u6y8lcwEnK1gVie+AXTiVF0Pbx/KQdB04t89/1O/w1cDnyilFU=']
+SECRET= os.environ['c6f01ad3c59413f65a4eee6901d2ffc3']
 
 # Channel Access Token
 line_bot_api = LineBotApi(ACCESS_TOKEN)
