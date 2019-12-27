@@ -76,7 +76,7 @@ def handle_message(event):
         # query PM2.5
         for _site in pm_site:
             if _site == _token[1]:
-                _message = TextSendMessage("您輸入地區的PM2.5值:"+text=pm_site[_site]) #reply pm2.5 for the site
+                _message = TextSendMessage('您輸入地區的PM2.5值:'+text=pm_site[_site]) #reply pm2.5 for the site
                 line_bot_api.reply_message(event.reply_token, _message)
                 break;
     elif '!h' in _token[0] or '!help' in _token[0]:
