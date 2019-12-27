@@ -20,9 +20,9 @@ ACCESS_TOKEN= os.environ['ACCESS_TOKEN']
 SECRET= os.environ['CHANNEL_SECRET']
 
 # Channel Access Token
-line_bot_api = LineBotApi('7ejLZgAqLIJuafl/SF62AWu7H4sGWNCwaP84IxcMSRv3Pq2Og2R88ou97BCVARrW6liqV9tOgOa/q0fyVl0ep/QoYb4esyzLd+7KW1HXAroEWp+kvSwje3ox3u6y8lcwEnK1gVie+AXTiVF0Pbx/KQdB04t89/1O/w1cDnyilFU=')
+line_bot_api = LineBotApi(ACCESS_TOKEN);
 # Channel Secret
-handler = WebhookHandler('012ab1e363d8319250a52684c72994ba')
+handler = WebhookHandler(SECRET)
 
 pm_site = {}
 
@@ -106,7 +106,7 @@ def loadPMJson():
 
 def getCls(cls_prefix):
     ret_cls = []
-    urlstr = 'https://course.thu.edu.tw/search-result/107/1/'
+    urlstr = 'https://course.thu.edu.tw/search-result/108/1/'
     postfix = '/all/all'
     
     qry_cls = urlstr + cls_prefix + postfix
