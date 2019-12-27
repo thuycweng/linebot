@@ -106,7 +106,7 @@ def loadPMJson():
 
 def getCls(cls_prefix):
     ret_cls = []
-    urlstr = 'https://course.thu.edu.tw/search-result/107/1/'
+    urlstr = 'https://course.thu.edu.tw/search-result/108/1/'
     postfix = '/all/all'
     
     qry_cls = urlstr + cls_prefix + postfix
